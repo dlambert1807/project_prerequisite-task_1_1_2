@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 

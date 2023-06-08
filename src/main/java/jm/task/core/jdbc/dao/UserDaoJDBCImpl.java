@@ -18,7 +18,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void createUsersTable() {
         try(Connection conn = Util.getConnection();
-            Statement stmt = conn.createStatement();) {
+            Statement stmt = conn.createStatement()) {
             String sql = "CREATE TABLE IF NOT EXISTS USERS" +
                     "(id INTEGER not NULL AUTO_INCREMENT, " +
                     " name VARCHAR(255), " +
@@ -35,7 +35,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void dropUsersTable() {
         try(Connection conn = Util.getConnection();
-            Statement stmt = conn.createStatement();) {
+            Statement stmt = conn.createStatement()) {
             String sql = "DROP TABLE IF EXISTS USERS";
             stmt.executeUpdate(sql);
             // System.out.println("Dropped table successfully...");
@@ -64,7 +64,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void removeUserById(long id) {
         try(Connection conn = Util.getConnection();
-            Statement stmt = conn.createStatement();) {
+            Statement stmt = conn.createStatement()) {
             String sql = "DELETE FROM Users " +
                     "WHERE id = " + (id);
             stmt.executeUpdate(sql);
@@ -77,7 +77,7 @@ public class UserDaoJDBCImpl implements UserDao {
         List<User> users = new ArrayList<>();
         try(Connection conn = Util.getConnection();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(QUERY);) {
+            ResultSet rs = stmt.executeQuery(QUERY)) {
             while(rs.next()) {
                 User nextUser = new User(rs.getString("name"), rs.getString("lastName"), (byte) rs.getInt("age"));
                 nextUser.setId(rs.getLong("id"));
@@ -91,7 +91,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void cleanUsersTable() {
         try(Connection conn = Util.getConnection();
-            Statement stmt = conn.createStatement();) {
+            Statement stmt = conn.createStatement()) {
             String sql = "DELETE FROM Users";
             stmt.executeUpdate(sql);
             // System.out.println("Table cleared.");
