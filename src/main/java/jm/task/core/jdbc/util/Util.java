@@ -19,7 +19,7 @@ public class Util {
         return DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
     }
 
-    public static SessionFactory factoryBuild() {
+    public static SessionFactory buildFactory() {
         try {
             Properties prop = new Properties();
             prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");

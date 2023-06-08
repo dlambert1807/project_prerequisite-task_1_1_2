@@ -14,7 +14,7 @@ public class UserDaoHibernateImpl implements UserDao {
     private static SessionFactory factory;
 
     public UserDaoHibernateImpl() {
-        factory = Util.factoryBuild();
+        factory = Util.buildFactory();
     }
 
     @Override
