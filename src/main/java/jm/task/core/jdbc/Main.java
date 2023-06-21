@@ -17,6 +17,8 @@ public class Main {
         System.out.println("User with name - Gildong Hong added to the database.");
         test.saveUser("Nick", "Martin", (byte) 40);
         System.out.println("User with name - Nick Martin added to the database.");
+        // test.removeUserById(2);
+        // test.removeUserById(20);
         List<User> users = test.getAllUsers();
         for(User user : users){
             System.out.println(user.toString());
